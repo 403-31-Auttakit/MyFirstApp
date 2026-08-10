@@ -9,7 +9,7 @@ height_cm st.number_input("กรอกส่านสุงของคุณ (
     height_m = height_cm / 100
     bmi = weight / (height_m ** 2)
 
-    st.write("___")
+    st.write("---")
     st.header(f"ค่า ฺ?ณ ขอวคุณคือ: **{bmi:2f}**")
   if bmi < 18.5:
     st.warning("⚠️ คุณมีน้ำหนักน้อยกว่าเกณฑ์ (ผอม)")
