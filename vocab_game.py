@@ -45,6 +45,20 @@ def show_result_dialog(ans1, ans2):
 
     # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มตรวจข้อ 3, 4 ตรงนี้
 
+    if u_ans3 == "apple":
+        st.success("✅ ข้อ 3: ถูกต้อง")
+        score += 1
+    else:
+        st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans1}')")
+
+    # ตรวจข้อ 4
+    if u_ans4 == "fish":
+        st.success("✅ ข้อ 4: ถูกต้อง")
+        score += 1
+    else:
+        st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
+    
+
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
     if score == 2:
@@ -85,6 +99,20 @@ st.session_state.ans1_val = ans1
 st.session_state.ans2_val = ans2
 
 # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มข้อ 3, 4 ตรงนี้
+
+#. ช่องรับคำตอบ (ใช้ value ผูกกับตัวแปรตรงๆ เพื่อสั่งเคลียร์ได้)
+ans3 = st.text_input(
+    "ข้อ 3: An `a _ _ l e` a day keeps the doctor away. 🍎",
+    value=st.session_state.ans3_val,
+)
+ans4 = st.text_input(
+    "ข้อ 4: Cats love to eat `f _ s h`. 🐟",
+    value=st.session_state.ans4_val,
+)
+
+# อัปเดตค่าล่าสุดเข้าตัวแปร
+st.session_state.ans3_val = ans3
+st.session_state.ans4_val = ans4
 
 
 # 4. ปุ่มส่งคำตอบ
