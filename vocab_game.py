@@ -45,6 +45,9 @@ def show_result_dialog(ans1, ans2):
 
     # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มตรวจข้อ 3, 4 ตรงนี้
 
+    u_ans1 = ans3.strip().lower()
+    u_ans2 = ans4.strip().lower()
+
     if u_ans3 == "Watermelon":
         st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
